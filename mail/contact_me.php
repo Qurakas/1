@@ -23,24 +23,19 @@ $headers = "qurakas.contacto@gmail.com\n"; // This is the email address the gene
 $headers .= "Reply-To: $email_adress";   
 // mail($to,$email_subject,$email_body,$headers);
 // Use sendgrid to send the email
+$url = 'https://api.sendgrid.com/';
+$user = 'qurakas'
+$pass = 'animatosis205'
 $params = array(
-    'api_user'  => "Qurakas",
-    'api_key'   => "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",
+    'api_user'  => "$user",
+    'api_key'   => "$pass",
     'to'        => "$to",
-    'subject'   => "Contact Form Submission",
-    'html'      => "<html><head><title> Contact Form</title><body>
-    Name: $name\n<br>
-    Email: $email\n<br>
-    Subject: $subject\n<br>
-    Message: $message </body></head></html>",
-    'text'      => "
-    Name: $name\n
-    Email: $email\n
-    Subject: $subject\n
-    $message",
+    'subject'   => "$email_subject",
+    'html'      => "$email_body",
+    'text'      => "$email_body",
     'from'      => "qurakas.contacto@gmail.com",
 );
-$request = 'https://api.sendgrid.com/api/mail.send.json'
+$request = $url.'api/mail.send.json'
 // Generate curl request
 $session = curl_init($request);
 // Tell curl to use HTTP POST

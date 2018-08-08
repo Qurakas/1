@@ -25,7 +25,7 @@ $headers .= "Reply-To: $email_adress";
 // Use sendgrid to send the email
 $url = 'https://api.sendgrid.com/';
 $user = 'qurakas'
-$pass = 'animatosis205'
+$pass = 'qurakas'
 $params = array(
     'api_user'  => "$user",
     'api_key'   => "$pass",
